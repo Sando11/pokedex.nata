@@ -89,6 +89,13 @@ function createPokemon(pokemon) {
 
 function addCaptureButton(event) {
   const cardBack = event.target.querySelector(".pokemon-block-back");
+  
+  // Check if the capture button already exists
+  const existingCaptureButton = cardBack.querySelector(".capture-button");
+  if (existingCaptureButton) {
+    return;
+  }
+  
   const captureButton = document.createElement("button");
   captureButton.classList.add("capture-button");
   captureButton.textContent = "Capturar";
